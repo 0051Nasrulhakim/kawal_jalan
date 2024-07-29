@@ -1,0 +1,122 @@
+$biru : #0a62e6;
+// root
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    // gradasi warna background
+    // background: radial-gradient(circle, #34aefff3, #0000ff);
+    background: radial-gradient(circle, rgba(253, 83, 65, 0.953), #690101);
+    // background-color: $biru;
+    width: 100%;
+}
+.wrapper{
+    text-align: center;
+    img{
+        width: 18%;
+        // margin-top: -1%;
+        margin-left: 2%;
+    }
+    .section{
+        // border: 1px solid red;
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.5);
+        width: 70%;
+        background-color: white;
+        // taruh di tengah
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+        height: 620px;
+        border-radius: 15px;
+        padding: 2%;
+        .side_left{
+            // border: 1px solid black;
+            width: 40%;
+            text-align: center;
+            height: 100%;
+            img{
+                margin-top: 16%;
+                width: 60%;
+            }
+        }
+        .side_right{
+            text-align: center;
+            border: 1px solid rgb(139, 139, 139);
+            width: 60%;
+            border-radius: 10px;
+            .judul_login{
+                margin-top: 2%;
+                font-size: 25px;
+                font-weight: bold;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .form_login{
+                margin-top: 7%;
+                margin-left: 5%;
+                margin-right: 5%;
+                .button{
+                    text-align: right;
+                    button{
+                        // margin-right: auto;
+                    }
+                }
+                .keterangan{
+                    // cursor normal
+                    margin-top: 12%;
+                    cursor: default;
+                    .disini{
+                        color:#0000ff;
+                        cursor: pointer;
+                        // jika di hover
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .form_register{
+                margin-top: 7%;
+                margin-left: 5%;
+                margin-right: 5%;
+                .button{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    button{
+                        // margin-right: auto;
+                    }
+                    .keterangan{
+                        cursor: default;
+                        display: flex;
+                        flex-direction: row;
+                        width: 500px;
+                        .text-login{
+                            margin-right: 2%;
+                            margin-left: 4%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        }
+                        .disini{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            // margin-left: 2%;
+                            color:#0000ff;
+                            cursor: pointer;
+                            // jika di hover
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

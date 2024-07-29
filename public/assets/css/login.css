@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle, rgba(253, 83, 65, 0.953), #690101);
+  width: 100%;
+}
+
+.wrapper {
+  text-align: center;
+}
+.wrapper img {
+  width: 18%;
+  margin-left: 2%;
+}
+.wrapper .section {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
+  width: 70%;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  height: 620px;
+  border-radius: 15px;
+  padding: 2%;
+}
+.wrapper .section .side_left {
+  width: 40%;
+  text-align: center;
+  height: 100%;
+}
+.wrapper .section .side_left img {
+  margin-top: 16%;
+  width: 60%;
+}
+.wrapper .section .side_right {
+  text-align: center;
+  border: 1px solid rgb(139, 139, 139);
+  width: 60%;
+  border-radius: 10px;
+}
+.wrapper .section .side_right .judul_login {
+  margin-top: 2%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.wrapper .section .side_right .form_login {
+  margin-top: 7%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.wrapper .section .side_right .form_login .button {
+  text-align: right;
+}
+.wrapper .section .side_right .form_login .keterangan {
+  margin-top: 12%;
+  cursor: default;
+}
+.wrapper .section .side_right .form_login .keterangan .disini {
+  color: #0000ff;
+  cursor: pointer;
+}
+.wrapper .section .side_right .form_login .keterangan .disini:hover {
+  text-decoration: underline;
+}
+.wrapper .section .side_right .form_register {
+  margin-top: 7%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.wrapper .section .side_right .form_register .button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.wrapper .section .side_right .form_register .button .keterangan {
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+}
+.wrapper .section .side_right .form_register .button .keterangan .text-login {
+  margin-right: 2%;
+  margin-left: 4%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wrapper .section .side_right .form_register .button .keterangan .disini {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #0000ff;
+  cursor: pointer;
+}
+.wrapper .section .side_right .form_register .button .keterangan .disini:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=login.css.map */

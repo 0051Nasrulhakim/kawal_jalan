@@ -1,0 +1,266 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.wrapper-dashboard {
+    padding: 1%;
+    border: 1px solid;
+    display: flex;
+    margin-top: 1%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .laporan-masuk {
+        padding: 1%;
+        border-radius: 6px;
+        border: 1px solid;
+        width: 24%;
+        margin-bottom: 1%;
+
+        .title {
+            font-size: 16pt;
+            font-weight: 500;
+        }
+
+        .contain {
+            margin-top: 1%;
+            display: flex;
+
+            .number {
+                font-size: 20pt;
+                font-weight: 800;
+                // border: 1px solid;
+                width: 60%;
+                margin-right: 1%;
+            }
+
+            .logo {
+                width: 39%;
+                text-align: right;
+            }
+        }
+    }
+
+    .laporan-diproses {
+        padding: 1%;
+        border-radius: 6px;
+        border: 1px solid;
+        width: 24%;
+        margin-bottom: 1%;
+
+        .title {
+            font-size: 16pt;
+            font-weight: 500;
+        }
+
+        .contain {
+            margin-top: 1%;
+            display: flex;
+
+            .number {
+                font-size: 20pt;
+                font-weight: 800;
+                // border: 1px solid;
+                width: 60%;
+                margin-right: 1%;
+            }
+
+            .logo {
+                width: 39%;
+                text-align: right;
+            }
+        }
+    }
+
+    .laporan-selesai {
+        padding: 1%;
+        border-radius: 6px;
+        border: 1px solid;
+        width: 24%;
+        margin-bottom: 1%;
+
+        .title {
+            font-size: 16pt;
+            font-weight: 500;
+        }
+
+        .contain {
+            margin-top: 1%;
+            display: flex;
+
+            .number {
+                font-size: 20pt;
+                font-weight: 800;
+                // border: 1px solid;
+                width: 60%;
+                margin-right: 1%;
+            }
+
+            .logo {
+                width: 39%;
+                text-align: right;
+            }
+        }
+    }
+}
+
+.wrapper-laporan-masuk {
+    padding: 1%;
+    border: 1px solid;
+    margin-top: 1%;
+    a{
+        color: white;
+        :hover{
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    .title {
+        text-align: center;
+        font-size: 16pt;
+        font-weight: 900;
+        border-bottom: 2px solid;
+        width: 18%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+    }
+
+    .form-detail-laporan-masuk {
+        display: flex;
+        justify-content: space-between;
+
+        // border: 1px solid;
+        .left {
+            width: 48%;
+            // border: 1px solid;
+        }
+
+        .right {
+            // border: 1px solid;
+            width: 48%;
+        }
+    }
+
+
+    .riwayat-laporan {
+        border: 1px solid #999999;
+        margin-top: 2%;
+        border-radius: 10px;
+        padding: 1%;
+
+        .title-riwayat {
+            text-align: center;
+            font-size: 16pt;
+            font-weight: 900;
+            border-bottom: 2px solid;
+            width: 18%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2%;
+        }
+    }
+
+    .section {
+        width: 100%;
+        // border: 1px solid;
+        margin-top: 3%;
+        display: flex;
+
+        .gambar {
+            width: 520px;
+            margin-bottom: 3%;
+            border: 1px solid #999999 ;
+            border-radius: 10px;
+            height: 550px;
+
+            .title-gambar {
+                text-align: center;
+                font-size: 15pt;
+                font-weight: 600;
+                margin-bottom: 1%;
+            }
+            img{
+                border-radius: 10px;
+            }
+        }
+
+        .maps {
+            .title-gambar {
+                text-align: center;
+                font-size: 15pt;
+                font-weight: 600;
+                margin-bottom: 1%;
+            }
+
+            border: 1px solid #999999 ;
+            width: 50%;
+            margin-left: 1.5%;
+            border-radius: 10px;
+            height: 550px;
+            .peta {
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+.wrapper-laporan-diproses {
+    padding: 1%;
+    border: 1px solid;
+    margin-top: 1%;
+
+    .title {
+        text-align: center;
+        font-size: 16pt;
+        font-weight: 900;
+        border-bottom: 2px solid;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+    }
+}
+
+.wrapper-laporan-selesai {
+    padding: 1%;
+    border: 1px solid;
+    margin-top: 1%;
+
+    .title {
+        text-align: center;
+        font-size: 16pt;
+        font-weight: 900;
+        border-bottom: 2px solid;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+    }
+}
+
+.wrapper-laporan-Tidak-Valid {
+    padding: 1%;
+    border: 1px solid;
+    margin-top: 1%;
+
+    .title {
+        text-align: center;
+        font-size: 16pt;
+        font-weight: 900;
+        border-bottom: 2px solid;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+    }
+}
+
+.modal-ubah-status {
+    .lokasi-btn {
+        margin-top: 2%;
+        text-align: right;
+    }
+}

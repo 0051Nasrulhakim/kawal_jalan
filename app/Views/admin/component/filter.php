@@ -1,0 +1,4 @@
+<a href="<?= base_url() ?>admin/laporanMasuk"><button class="btn btn-sm <?php if($lokasi == 'laporanmasuk'){ echo 'btn-success'; }else{ echo 'btn-primary';}?>">Laporan Masuk</button></a>
+<a href="<?= base_url() ?>admin/laporanDiproses"><button class="btn btn-sm <?php if($lokasi == 'laporandiproses'){ echo 'btn-success'; }else{ echo 'btn-primary';}?>">Laporan Diproses</button></a>
+<a href="<?= base_url() ?>admin/laporanSelesai"><button class="btn btn-sm <?php if($lokasi == 'laporanselesai'){ echo 'btn-success'; }else{ echo 'btn-primary';}?>"> Laporan Selesai </button></a>
+<a href="<?= base_url() ?>admin/laporanTidakValid"><button class="btn btn-sm <?php if($lokasi == 'laporantidakvalid'){ echo 'btn-success'; }else{ echo 'btn-primary';}?>"> Laporan Tidak Valid </button></a>
