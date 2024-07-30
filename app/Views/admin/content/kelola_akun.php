@@ -4,7 +4,7 @@
 <div class="container">
     <div class="wrapper-laporan-Tidak-Valid">
         <div class="title">
-            Kelola akun pelapor
+            Kelola akun
         </div>
         <table class="table table-striped table-laporan-masuk" id="table_laporanTidakValid">
             <thead>

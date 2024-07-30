@@ -60,7 +60,7 @@
                             </a>
                             <a class="nav-link <?= $retVal = ($parameter == 'Kelola Akun') ? 'active' : '' ;?>" href="<?= base_url()?>admin/kelolaAkun">
                                 <div class="sb-nav-link-icon"><i class="fa-sharp fa-solid fa-school"></i></div>
-                                Kelola Akun Pelapor
+                                kelola akun
                             </a>
 
                         </div>
