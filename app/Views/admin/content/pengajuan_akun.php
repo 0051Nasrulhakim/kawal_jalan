@@ -4,7 +4,7 @@
 <div class="container">
     <div class="wrapper-laporan-Tidak-Valid">
         <div class="title">
-            Daftar Akun Pengguna
+            Pengajuan Pembuatan Akun
         </div>
         <?= $this->include('admin/component/menuKelolaAkun') ?>
         <table class="table table-striped table-laporan-masuk" id="table_laporanTidakValid">

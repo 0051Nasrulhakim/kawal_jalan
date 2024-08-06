@@ -58,7 +58,7 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
                                 Daftar Laporan
                             </a>
-                            <a class="nav-link <?= $retVal = ($parameter == 'Kelola Akun') ? 'active' : '' ;?>" href="<?= base_url()?>admin/kelolaAkun">
+                            <a class="nav-link <?= $retVal = ($parameter == 'Kelola Akun') ? 'active' : '' ;?>" href="<?= base_url()?>admin/pengajuanAkun">
                                 <div class="sb-nav-link-icon"><i class="fa-sharp fa-solid fa-school"></i></div>
                                 kelola akun
                             </a>

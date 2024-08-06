@@ -113,9 +113,25 @@ class Admin extends BaseController
         $data = [
             'parameter' => 'Kelola Akun',
             'lokasi'    => 'kelolaakun',
-            'data'      => $this->user->where('jenis_akun', 'publik')->findAll(),
+            'data'      => $this->user
+                            ->where('jenis_akun', 'publik')
+                            ->where('status_akun !=', 'belum_aktiv')
+                            ->findAll(),
         ];
         // dd($data);
         return view('admin/content/kelola_akun', $data);
+    }
+
+    public function pengajuanAkun(){
+        $data =  [
+            'parameter' => 'Kelola Akun',
+            'lokasi'    => 'pengajuanakun',
+            'data'      => $this->user
+                            ->where('jenis_akun', 'publik')
+                            ->where('status_akun', 'belum_aktiv')
+                            ->findAll(),
+        ];
+        // dd($data);
+        return view('admin/content/pengajuan_akun', $data);
     }
 }

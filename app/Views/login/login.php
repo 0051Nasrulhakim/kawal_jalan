@@ -157,19 +157,19 @@
                         // masukkan pesan error ke dalam div
                         $('#username_login_error').text(res_login.username);
                         $('#password_login_error').text(res_login.password);
-                    }else if(res_login.status == 'akun tidak aktiv'){
+                    }else if(res_login.status == '301'){
                         // swall
                         Swal.fire({
                             icon: 'error',
                             title: 'AKUN TIDAK AKTIV',
-                            text: 'AKUN ANDA TIDAK AKTIV / TERBANED',
+                            text: res_login.data,
                             showConfirmButton: false,
                             // timer: 1500
                         })
                         // redirect
                         setTimeout(function() {
                             window.location.href = 'http://localhost:8080/home';
-                        }, 3000);
+                        }, 4000);
                     }else{
                         // swall
                         Swal.fire({

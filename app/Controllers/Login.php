@@ -66,10 +66,16 @@ class Login extends BaseController
                     return response();
                 }
 
-            }else{ 
-
+            }else if($cek['status_akun'] == 'belum_aktiv'){
                 $res = [
-                    'status' => 'akun tidak aktiv',
+                    'status' => '301',
+                    'data' => 'Akun anda belum aktiv menunggu aktivasi dari admin'
+                ];
+                response()->setJSON($res);
+                return response();
+            }else{ 
+                $res = [
+                    'status' => '301',
                     'data' => 'Akun Anda Tidak Aktiv'
                 ];
                 response()->setJSON($res);
