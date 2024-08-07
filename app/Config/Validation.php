@@ -107,13 +107,13 @@ class Validation extends BaseConfig
         'lat' => [
             'rules' => 'required',
             'errors' => [
-                'required' => 'Lokasi Anda Tidak Bisa di Akses Mohon ijinkan lokasi dan aktivkan GPS',
+                'required' => 'Silahkan Pilih Lokasi',
             ]
         ],
         'lon' => [
             'rules' => 'required',
             'errors' => [
-                'required' => 'Lokasi Anda Tidak Bisa di Akses Mohon ijinkan lokasi dan aktivkan GPS',
+                'required' => 'Silahkan Pilih Lokasi',
             ]
         ],
         'identitas' => [

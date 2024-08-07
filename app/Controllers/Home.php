@@ -24,6 +24,9 @@ class Home extends BaseController
         return view('publik/page/dashboard', $data);
     }
 
+    public function tes(){
+        return view('publik/tespicker');
+    }
     public function getKelurahan($id_wilayah){
         $kelurahan = $this->kelurahan->where('id_wilayah', $id_wilayah)->findAll();
 

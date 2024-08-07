@@ -10,7 +10,7 @@
         <div class="title-2">
             Sampaikan Aduan Anda Di sini
         </div>
-
+        <?= $this->include('publik/page/aduan-component/getKoordinat-map') ?>
         <div class="form">
 
             <!-- buatkan form untuk upload gambar  -->
@@ -38,15 +38,14 @@
                                 <label for="kecamatan" class="col-form-label">Kecamatan</label>
                             </div>
                             <div class="col">
-                                <select class="form-select" name="kecamatan" id="kecamatan">
+                                <select class="form-select" name="kecamatan" id="kecamatan" onchange="hapusError('kecamatan')">
                                     <option selected disabled>Pilih Kecamatan</option>
                                     <?php foreach ($kecamatan as $kec) : ?>
                                         <option value="<?= $kec['id_wilayah'] ?>"><?= $kec['nama_kecamatan'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <!-- <input type="text" id="kecamatan" class="form-control" name="kecamatan" onkeyup="hapusError('kecamatan')"> -->
-                                <input type="text" id="latInput" class="form-control" name="lat" hidden>
-                                <input type="text" id="lonInput" class="form-control" name="lon" hidden>
+
                                 <div class="form-text text-danger" id="kecamatan_error"></div>
                             </div>
                         </div>
@@ -56,13 +55,39 @@
                             </div>
                             <div class="col">
                                 <!-- <input type="text" id="Desa" class="form-control" name="desa" onkeyup="hapusError('desa')"> -->
-                                <select name="desa" id="desa" class="form-select">
+                                <select name="desa" id="desa" class="form-select" onchange="hapusError('desa')">
                                     <option selected disabled>Pilih Desa / kelurahan</option>
 
                                 </select>
                                 <div class="form-text text-danger" id="desa_error"></div>
                             </div>
                         </div>
+
+                        <div class="row mt-3">
+                            <div class="col-2">
+                                <label for="Desa" class="col-form-label">Pilih Lokasi</label>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-success" type="button" onclick="show_bukti()">pilih titik lokasi kerusakan jalan</button>
+                                <div class="form-text text-black" >* Latitude dan logatitude akan terisi otomatis</div>
+                                <div class="row mt-2">
+                                    <div class="col-2">
+                                        <label for="Desa" class="col-form-label">latitude</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" id="latInput" class="form-control bg-grey" name="lat" readonly >
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="Desa" class="col-form-label">longitude</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" id="lonInput" class="form-control bg-grey" name="lon" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-text text-danger" id="lokasi_error"></div>
+                            </div>
+                        </div>
+
                         <div class="row mt-3">
                             <div class="col-2">
                                 <label for="Desa" class="col-form-label">Detail Lokasi & Keterangan</label>
@@ -101,26 +126,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row mt-3">
-                            <div class="col-2">
-                                <label for="Desa" class="col-form-label">Apakah Anda Di TKP.?</label>
-                            </div>
-
-                            <div class="col" style="display: flex;flex-direction: column;">
-                                <div class="col">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault-tkp" value="true" id="flexRadioDefault3" checked>
-                                    <label class="form-check-label" for="flexRadioDefault3">
-                                        Saya Berada Di TKP
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault-tkp" value="false" id="flexRadioDefault4">
-                                    <label class="form-check-label" for="flexRadioDefault4">
-                                        Saya Tidak Berada Di TKP
-                                    </label>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <div class="row mt-3">
                             <button class="btn btn-sm btn-primary" type="submit">
@@ -141,15 +146,19 @@
 </div>
 
 <script>
+    function show_bukti() {
+        $('#mapKoordinatPicker').modal('show');
+    }
+
     function getKoordinat() {
         if (navigator.geolocation) {
             var options = {
                 enableHighAccuracy: true,
                 maximumAge: 0,
-                timeout: 10000 
+                timeout: 10000
             };
             var izin = navigator.geolocation.getCurrentPosition(showPosition, showError, options);
-            console.log(izin)
+            // console.log(izin)
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
@@ -200,15 +209,30 @@
     }
 
     function showPosition(position) {
-
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
         var accuracy = position.coords.accuracy;
-        console.log(longitude, accuracy)
 
-        var lokasi = document.getElementById('lokasi')
-        lokasi.innerHTML = "Latitude: " + latitude + ", Longitude: " + longitude + "akurasi" + accuracy;
-        
+        var lat_input = document.getElementById('latInput');
+        var lon_input = document.getElementById('lonInput');
+        var lokasi = document.getElementById('lokasi');
+
+        lat_input.value = latitude;
+        lon_input.value = longitude;
+        lokasi.innerHTML = "Latitude: " + latitude + ", Longitude: " + longitude;
+
+        // Pindahkan peta ke koordinat pengguna
+        map.setView([latitude, longitude], 16);
+
+        // Tambahkan atau pindahkan marker ke lokasi pengguna
+        if (!marker) {
+            marker = L.marker([latitude, longitude]).addTo(map);
+        } else {
+            marker.setLatLng([latitude, longitude]);
+        }
+
+        // Perbarui popup marker
+        marker.bindPopup("Koordinat: " + latitude + ", " + longitude).openPopup();
     }
 
     $(document).ready(function() {
@@ -235,6 +259,7 @@
                     $('#desa_error').text(res.errors.desa);
                     $('#detail_lokasi_error').text(res.errors.detail_lokasi);
                     $('#image_error').text(res.errors.image);
+                    $('#lokasi_error').text(res.errors.lat);
                 } else {
                     // swall
                     Swal.fire({
@@ -257,6 +282,60 @@
         $('#' + id + '_error').text('');
     }
 </script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+    var map;
+    var marker;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var mapModal = document.getElementById('mapKoordinatPicker');
+        mapModal.addEventListener('shown.bs.modal', function() {
+            if (!map) {
+                // Inisialisasi peta
+                map = L.map('map').setView([-6.8898, 109.6746], 16);
+
+                // Tambahkan tile layer dari OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                // Event listener untuk mendapatkan koordinat saat peta diklik
+                map.on('click', function(e) {
+                    var coord = e.latlng;
+                    var lat = coord.lat;
+                    var lng = coord.lng;
+                    document.getElementById("coordinates").innerHTML = "Lat: " + lat + ", Lng: " + lng;
+
+                    // Jika marker belum ada, buat marker baru
+                    if (!marker) {
+                        marker = L.marker([lat, lng]).addTo(map);
+                    } else {
+                        // Jika marker sudah ada, pindahkan marker ke lokasi baru
+                        marker.setLatLng([lat, lng]);
+                    }
+
+                    // Perbarui popup marker
+                    marker.bindPopup("Koordinat: " + lat + ", " + lng).openPopup();
+
+                    var lat_input = document.getElementById('latInput');
+                    var lon_input = document.getElementById('lonInput');
+                    var lokasi = document.getElementById('lokasi');
+
+                    lat_input.value = lat;
+                    lon_input.value = lng;
+
+                });
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+            } else {
+                map.invalidateSize(); // Memastikan peta diperbarui ukurannya saat modal dibuka
+            }
+        });
+    });
+</script>
+
 
 
 <?= $this->endSection(); ?>

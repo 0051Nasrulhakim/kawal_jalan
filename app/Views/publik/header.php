@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
     <title>Testing Pengaduan Jalan</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>/leaflet/leaflet.css">
 </head>
 
 <body>
@@ -19,10 +22,10 @@
         <div class="wrapper">
             <div class="logo">Kawal Jalan</div>
             <div class="menu">
-                <div class="menu-1"><a href="<?=base_url()?>home/aduan">Daftar Aduan</a></div>
-                <div class="menu-2"><a href="<?=base_url()?>home/dashboard">Buat Aduan</a></div>
-                <div class="menu-3"><a href="<?= base_url()?>home/profile">Profile</a></div>
-                <div class="menu-3"><a href="<?= base_url()?>login/logout">Logout</a></div>
+                <div class="menu-1"><a href="<?= base_url() ?>home/aduan">Daftar Aduan</a></div>
+                <div class="menu-2"><a href="<?= base_url() ?>home/dashboard">Buat Aduan</a></div>
+                <div class="menu-3"><a href="<?= base_url() ?>home/profile">Profile</a></div>
+                <div class="menu-3"><a href="<?= base_url() ?>login/logout">Logout</a></div>
             </div>
         </div>
     </div>
